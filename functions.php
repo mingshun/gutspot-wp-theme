@@ -249,12 +249,12 @@ function cutsom_comment($comment, $args, $depth) {
 
 
 /**
- * wp_head hook for enable prettify code highlight.
+ * wp_head hook for enabling prettify code highlight.
  *
  * @since Gutspot Theme 1.0
  */
 function enable_prettify_wp_head() {
-  if (get_option('gutspot_enable_prettify')):?>
+  if (get_option('gutspot_enable_prettify') && is_single()):?>
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_url'); ?>/stylesheets/prettify.css" />
 <?php 
   endif;
@@ -263,12 +263,12 @@ add_action('wp_head', 'enable_prettify_wp_head');
 
 
 /**
- * wp_foot hook for enable prettify code highlight.
+ * wp_footer hook for enabling prettify code highlight.
  *
  * @since Gutspot Theme 1.0
  */
-function enable_prettify_wp_foot() {
-  if (get_option('gutspot_enable_prettify')):?>
+function enable_prettify_wp_footer() {
+  if (get_option('gutspot_enable_prettify') && is_single()):?>
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/javascripts/prettify/prettify.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/javascripts/swfobject/swfobject.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/javascripts/zclip/jquery.zclip.min.js"></script>
@@ -276,5 +276,33 @@ function enable_prettify_wp_foot() {
 <?php 
   endif;
 }
-add_action('wp_footer', 'enable_prettify_wp_foot');
+add_action('wp_footer', 'enable_prettify_wp_footer');
+
+
+/**
+ * wp_head hook for github repos page.
+ *
+ * @since Gutspot Theme 1.0
+ */
+function github_repos_page_wp_head() {
+  if (basename(get_page_template()) == 'page-github-repos.php'):?>
+<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_url'); ?>/stylesheets/github-repos.css" />
+<?php
+  endif;
+}
+add_action('wp_head', 'github_repos_page_wp_head');
+
+
+/**
+ * wp_footer hook for github repos page.
+ *
+ * @since Gutspot Theme 1.0
+ */
+function github_repos_page_wp_footer() {
+  if (basename(get_page_template()) == 'page-github-repos.php'):?>
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/javascripts/github-repos.js"></script>
+<?php 
+  endif;
+}
+add_action('wp_footer', 'github_repos_page_wp_footer');
 ?>

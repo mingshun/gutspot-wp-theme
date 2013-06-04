@@ -1,0 +1,113 @@
+/*
+ * styles for github repos page
+ */
+
+#github-loading {
+	padding: 100px 0;
+}
+
+#repos {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+}
+
+.repo {
+	position: relative;
+	padding: 0;
+}
+
+.repo:after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 0;
+	height: 0;
+	border-bottom: 60px solid transparent;
+	border-left: 60px solid transparent;
+	border-right: 60px solid #333;
+	pointer-events: none;
+}
+
+.repo > a {
+	display: block;
+	overflow: hidden;
+	text-decoration: none;
+	padding: 14px 18px;
+	margin: 0;
+	height: 278px;
+}
+
+.repo > a:hover {
+	background-color: #dfdfdf;
+}
+
+.repo > a > h2 {
+	font-size: 20px;
+	color: #06c;
+	padding: 0 30px 10px 0;
+	margin: 0 0 10px 0;
+	line-height: 26px;
+}
+
+.repo > a > p {
+	font-size: 13px;
+	color: #333;
+}
+
+.repo > a > h2 > p.repo-language,
+.repo > a > h2 > p.repo-update {
+	padding: 3px 0 0 0;
+	margin: 0;
+	font-size: 13px;
+	color: #777;
+	font-weight: normal;
+	line-height: 15px;
+}
+
+.repo.cpp:after {
+	border-right-color: #0080b0;
+}
+
+.repo.javascript:after {
+	border-right-color: #73a53e;
+}
+
+.repo.php:after {
+	border-right-color: #9999cc;
+}
+
+.repo.java:after {
+	border-right-color: #1f4f82;
+}
+
+.repo.python:after {
+	border-right-color: #ffbc29;
+}
+
+.repo.go:after {
+	border-right-color: #76e1fe;
+}
+
+.repo.ruby:after {
+	border-right-color: #cc1100;
+}
+
+.repo.lua:after {
+	border-right-color: #000080;
+}
+
+.repo.erlang:after {
+	border-right-color: #9b0000;
+}
+
+.repo.scala:after {
+	border-right-color: #a61214;
+}
+
+.repo.cs:after {
+	border-right-color: #68217a;
+}

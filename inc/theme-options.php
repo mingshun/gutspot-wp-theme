@@ -26,6 +26,8 @@ add_action('admin_menu', 'gutspot_create_menu');
 function gutspot_register_settings() {
   register_setting('gutspot-settings', 'gutspot_analytics');
   register_setting('gutspot-settings', 'gutspot_enable_prettify');
+  register_setting('gutspot-settings', 'gutspot_github_type');
+  register_setting('gutspot-settings', 'gutspot_github_login');
 }
 
 
@@ -47,7 +49,7 @@ function gutspot_settings_page() {
           <label for="gutspot_analytics">Google 分析代码</label>
         </th>
         <td>
-          <textarea name="gutspot_analytics" rows="16" cols="120" class="large-text code"><?php print get_option('gutspot_analytics'); ?></textarea>
+          <textarea name="gutspot_analytics" id="gutspot_analytics" rows="16" cols="120" class="large-text code"><?php print get_option('gutspot_analytics'); ?></textarea>
         </td>
       </tr>
       <tr valign="top">
@@ -56,6 +58,26 @@ function gutspot_settings_page() {
           <label for="gutspot_enable_prettify">
             <input type="checkbox" name="gutspot_enable_prettify" id="gutspot_enable_prettify" <?php if (get_option('gutspot_enable_prettify') == true) {print "checked";} ?> /> 启用
           </label>
+        </td>
+      </tr>
+      <tr valign="top">
+        <th scope="row">GitHub 账号类型</th>
+        <td>
+          <label>
+            <input type="radio" name="gutspot_github_type" value="user" <?php if (get_option('gutspot_github_type') == 'user') {print "checked";}?> /> 用户
+          </label>
+          <br />
+          <label>
+            <input type="radio" name="gutspot_github_type" value="org" <?php if (get_option('gutspot_github_type') == 'org') {print "checked";}?> /> 组织
+          </label>
+        </td>
+      </tr>
+      <tr valign="top">
+        <th scope="row">
+          <label for="gutspot_github_login">GitHub 登录名</label>
+        </th>
+        <td>
+          <input type="text" name="gutspot_github_login" class="regular-text" value="<?php print get_option('gutspot_github_login'); ?>" />
         </td>
       </tr>
     </tbody>
