@@ -86,6 +86,8 @@
         .addClass(language_css_class(repo_obj.language))
         .append($('<a></a>')
           .attr('href', repo_obj.html_url)
+          .attr('target', '_blank')
+          .attr('rel', 'noreferrer')
           .append($('<h2></h2>')
             .text(repo_obj.name)
             .append(assemble_repo_meta(repo_obj.language, 'repo-language'))
