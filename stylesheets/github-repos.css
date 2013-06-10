@@ -111,3 +111,11 @@
 .repo.cs:after {
 	border-right-color: #68217a;
 }
+
+.repo.perl:after {
+	border-right-color: #004065;
+}
+
+.repo.haskell:after {
+	border-right-color: #4e6272;
+}
