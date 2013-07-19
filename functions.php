@@ -267,7 +267,11 @@ add_action('wp_head', 'enable_prettify_wp_head');
  *
  * @since Gutspot Theme 1.0
  */
-function enable_prettify_wp_footer() {
+function enable_prettify_wp_footer() {?>
+<script type="text/javascript">
+  var templateDir = "<?php bloginfo('template_directory') ?>";
+</script>
+<?php
   if (get_option('gutspot_enable_prettify') && is_single()):?>
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/javascripts/prettify/prettify.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/javascripts/swfobject/swfobject.js"></script>

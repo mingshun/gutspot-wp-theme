@@ -29,7 +29,6 @@
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php bloginfo('template_url'); ?>/img/gutspot-favicon-72-precomposed.png" />
 <link rel="apple-touch-icon-precomposed" href="<?php bloginfo('template_url'); ?>/img/gutspot-favicon-57-precomposed.png" />
 <link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/img/gutspot-favicon.png" />
-<base href="<?php bloginfo('template_url'); ?>/" />
 <?php wp_head(); ?>
 <?php print get_option('gutspot_analytics'); ?>
 </head>

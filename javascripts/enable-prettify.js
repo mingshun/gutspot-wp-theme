@@ -24,7 +24,7 @@
         .addClass('copy-code')
         .appendTo(self)
         .zclip({
-          path: 'javascripts/zclip/ZeroClipboard.swf',
+          path: templateDir + '/javascripts/zclip/ZeroClipboard.swf',
           copy: raw,
           afterCopy: function() {
             var modal = createModal('代码已经复制到剪贴板上了！');
