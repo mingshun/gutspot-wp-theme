@@ -309,4 +309,12 @@ function github_repos_page_wp_footer() {
   endif;
 }
 add_action('wp_footer', 'github_repos_page_wp_footer');
+
+
+// Remove Wordpress version number
+remove_action('wp_head', 'wp_generator');
+function wpbeginner_remove_version() {
+  return '';
+}
+add_filter('the_generator', 'wpbeginner_remove_version');
 ?>
