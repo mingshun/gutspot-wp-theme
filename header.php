@@ -18,18 +18,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title><?php wp_title('|', true, 'right'); ?> <?php bloginfo('name'); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_url'); ?>/stylesheets/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_url'); ?>/stylesheets/bootstrap-responsive.min.css" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_url'); ?>/stylesheets/font-awesome.min.css" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_url'); ?>/stylesheets/docs.css" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+<?php wp_head(); ?>
 <!--[if lt IE 9]><script src="<?php bloginfo('template_url'); ?>/javascripts/html5shiv.js"></script><![endif]-->
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php bloginfo('template_url'); ?>/img/gutspot-favicon-144-precomposed.png" />
 <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php bloginfo('template_url'); ?>/img/gutspot-favicon-114-precomposed.png" />
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php bloginfo('template_url'); ?>/img/gutspot-favicon-72-precomposed.png" />
 <link rel="apple-touch-icon-precomposed" href="<?php bloginfo('template_url'); ?>/img/gutspot-favicon-57-precomposed.png" />
 <link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/img/gutspot-favicon.png" />
-<?php wp_head(); ?>
 <?php print get_option('gutspot_analytics'); ?>
 </head>
 <body <?php body_class(); ?>>

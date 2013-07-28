@@ -11,11 +11,6 @@
   </footer>
 </div>
 <!-- end of container -->
-<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/javascripts/jquery.min.js"></script>
-<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/javascripts/jquery-ui.custom.min.js"></script>
-<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/javascripts/jquery.smooth-scroll.min.js"></script>
-<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/javascripts/bootstrap.min.js"></script>
-<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/javascripts/application.js"></script>
 <?php wp_footer(); ?>
 </body>
 </html>

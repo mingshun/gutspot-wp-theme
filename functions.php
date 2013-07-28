@@ -54,10 +54,10 @@ add_action('after_setup_theme', 'gutspot_setup');
  *
  * @since Gutspot Theme 1.0
  */
-function custom_excerpt_length($length) {
+function gutspot_excerpt_length($length) {
   return 200;
 }
-add_filter('excerpt_length', 'custom_excerpt_length');
+add_filter('excerpt_length', 'gutspot_excerpt_length');
 
 
 /**
@@ -65,7 +65,7 @@ add_filter('excerpt_length', 'custom_excerpt_length');
  *
  * @since Gutspot Theme 1.0
  */
-function custom_get_comment_reply_link($args = array(), $comment = null, $post = null) {
+function gutspot_get_comment_reply_link($args = array(), $comment = null, $post = null) {
   global $user_ID;
 
   $defaults = array(
@@ -112,7 +112,7 @@ function custom_get_comment_reply_link($args = array(), $comment = null, $post =
  *
  * @since Gutspot Theme 1.0
  */
-function custom_comment_form($args = array(), $post_id = null) {
+function gutspot_comment_form($args = array(), $post_id = null) {
   global $id;
 
   if (null === $post_id) {
@@ -201,7 +201,7 @@ function custom_comment_form($args = array(), $post_id = null) {
  *
  * @since Gutspot Theme 1.0
  */
-function cutsom_comment($comment, $args, $depth) {
+function gutspot_comment($comment, $args, $depth) {
   $GLOBALS['comment'] = $comment;
   switch ($comment->comment_type):
     case 'pingback':
@@ -238,7 +238,7 @@ function cutsom_comment($comment, $args, $depth) {
           </div>
         </div>
         <div class="reply-container pull-right">
-          <?php echo custom_get_comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
+          <?php echo gutspot_get_comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
         </div>
         <div class="clearfix"></div>
       </article>
@@ -249,72 +249,84 @@ function cutsom_comment($comment, $args, $depth) {
 
 
 /**
- * wp_head hook for enabling prettify code highlight.
+ * Load theme stylesheet and javascript files on init.
  *
  * @since Gutspot Theme 1.0
  */
-function enable_prettify_wp_head() {
-  if (get_option('gutspot_enable_prettify') && is_single()):?>
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_url'); ?>/stylesheets/prettify.css" />
-<?php 
-  endif;
+function gutspot_styles_scripts() {
+  if (!is_admin()) {
+    wp_enqueue_style('bootstrap', get_bloginfo('template_url') . '/stylesheets/bootstrap.min.css', array(), '2.3.1', 'all');
+    wp_enqueue_style('bootstrap-responsive', get_bloginfo('template_url') . '/stylesheets/bootstrap-responsive.min.css', array('bootstrap'), '2.3.1', 'all');
+    wp_enqueue_style('font-awesome', get_bloginfo('template_url') . '/stylesheets/font-awesome.min.css', array('bootstrap'), '3.1.0', 'all');
+    wp_enqueue_style('docs', get_bloginfo('template_url') . '/stylesheets/docs.css', array('bootstrap', 'font-awesome'), '1.0.0', 'all');
+
+    wp_deregister_script('jquery');
+    wp_register_script('jquery', get_bloginfo('template_url') . '/javascripts/jquery.min.js', array(), '1.9.1', true);
+    wp_enqueue_script('jquery');
+    wp_enqueue_script('jquery-ui', get_bloginfo('template_url') . '/javascripts/jquery-ui.custom.min.js', array('jquery'), '1.10.2', true);
+    wp_enqueue_script('jquery.smooth-scroll', get_bloginfo('template_url') . '/javascripts/jquery.smooth-scroll.min.js', array('jquery'), '1.4.10', true);
+    wp_enqueue_script('bootstrap', get_bloginfo('template_url') . '/javascripts/bootstrap.min.js', array('jquery'), '2.3.1', true);
+    wp_enqueue_script('application', get_bloginfo('template_url') . '/javascripts/application.js', array('jquery-ui', 'jquery.smooth-scroll', 'bootstrap'), '1.0.0', true);
+  }
 }
-add_action('wp_head', 'enable_prettify_wp_head');
+add_action('init', 'gutspot_styles_scripts');
 
 
 /**
- * wp_footer hook for enabling prettify code highlight.
+ * Loas prettify stylesheet and jacascript files.
  *
  * @since Gutspot Theme 1.0
  */
-function enable_prettify_wp_footer() {?>
+function gutspot_code_prettify_styles_scripts() {
+  if (!is_admin() && get_option('gutspot_enable_prettify') && is_single()) {
+    wp_enqueue_style('prettify', get_bloginfo('template_url') . '/stylesheets/prettify.css', array(), '1.0.0', 'all');
+
+    wp_enqueue_script('prettify', get_bloginfo('template_url') . '/javascripts/prettify/prettify.js', array('jquery'), '4_mar_2013', true);
+    wp_deregister_script('swfobject');
+    wp_register_script('swfobject', get_bloginfo('template_url') . '/javascripts/swfobject/swfobject.js', array(), '2.2', true);
+    wp_enqueue_script('swfobject');
+    wp_enqueue_script('jquery.zclip', get_bloginfo('template_url') . '/javascripts/zclip/jquery.zclip.min.js', array('jquery'), '1.1.1', true);
+    wp_enqueue_script('enable-prettify', get_bloginfo('template_url') . '/javascripts/enable-prettify.js', array('prettify', 'swfobject', 'jquery.zclip'), '1.0.0', true);
+  }
+}
+add_action('wp_enqueue_scripts', 'gutspot_code_prettify_styles_scripts');
+
+
+/**
+ * Set template directory for reference to load resources from within javascript files.
+ *
+ * @since Gutspot Theme 1.0
+ */
+function gutspot_set_template_dir() {
+  if (!is_admin() && get_option('gutspot_enable_prettify') && is_single()): ?>
 <script type="text/javascript">
-  var templateDir = "<?php bloginfo('template_directory') ?>";
+  var templateDir = '<?php bloginfo("template_directory") ?>';
 </script>
-<?php
-  if (get_option('gutspot_enable_prettify') && is_single()):?>
-<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/javascripts/prettify/prettify.js"></script>
-<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/javascripts/swfobject/swfobject.js"></script>
-<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/javascripts/zclip/jquery.zclip.min.js"></script>
-<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/javascripts/enable-prettify.js"></script>
 <?php 
   endif;
 }
-add_action('wp_footer', 'enable_prettify_wp_footer');
+add_action('wp_footer', 'gutspot_set_template_dir');
 
 
 /**
- * wp_head hook for github repos page.
+ * Load github repository page stylesheet and javascript files.
  *
  * @since Gutspot Theme 1.0
  */
-function github_repos_page_wp_head() {
-  if (basename(get_page_template()) == 'page-github-repos.php'):?>
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo('template_url'); ?>/stylesheets/github-repos.css" />
-<?php
-  endif;
-}
-add_action('wp_head', 'github_repos_page_wp_head');
+function gutspot_github_repos_page_styles_scripts() {
+  if (!is_admin() && basename(get_page_template()) == 'page-github-repos.php') {
+    wp_enqueue_style('github-repos', get_bloginfo('template_url') . '/stylesheets/github-repos.css', array(), '1.0.0', 'all');
 
-
-/**
- * wp_footer hook for github repos page.
- *
- * @since Gutspot Theme 1.0
- */
-function github_repos_page_wp_footer() {
-  if (basename(get_page_template()) == 'page-github-repos.php'):?>
-<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/javascripts/github-repos.js"></script>
-<?php 
-  endif;
+    wp_enqueue_script('github-repos', get_bloginfo('template_url') . '/javascripts/github-repos.js', array('jquery'), '1.0.0', true);
+  }
 }
-add_action('wp_footer', 'github_repos_page_wp_footer');
+add_action('wp_enqueue_scripts', 'gutspot_github_repos_page_styles_scripts');
 
 
 // Remove Wordpress version number
 remove_action('wp_head', 'wp_generator');
-function wpbeginner_remove_version() {
+function gutspot_remove_version() {
   return '';
 }
-add_filter('the_generator', 'wpbeginner_remove_version');
+add_filter('the_generator', 'gutspot_remove_version');
 ?>

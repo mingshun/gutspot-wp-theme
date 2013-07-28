@@ -35,5 +35,5 @@ if (post_password_required()) {
 <?php endif; ?>
 
 <hr>
-<?php custom_comment_form(); ?>
+<?php gutspot_comment_form(); ?>
 
