@@ -249,12 +249,22 @@ function gutspot_comment($comment, $args, $depth) {
 
 
 /**
+ * Detect if the current page is the login page.
+ *
+ * @since Gutspot Theme 1.0
+ */
+function gutspot_is_login_page() {
+  return in_array($GLOBALS['pagenow'], array('wp-login.php', 'wp-register.php'));
+}
+
+
+/**
  * Load theme stylesheet and javascript files on init.
  *
  * @since Gutspot Theme 1.0
  */
 function gutspot_styles_scripts() {
-  if (!is_admin()) {
+  if (!is_admin() && !gutspot_is_login_page()) {
     wp_enqueue_style('bootstrap', get_bloginfo('template_url') . '/stylesheets/bootstrap.min.css', array(), '2.3.1', 'all');
     wp_enqueue_style('bootstrap-responsive', get_bloginfo('template_url') . '/stylesheets/bootstrap-responsive.min.css', array('bootstrap'), '2.3.1', 'all');
     wp_enqueue_style('font-awesome', get_bloginfo('template_url') . '/stylesheets/font-awesome.min.css', array('bootstrap'), '3.1.0', 'all');
