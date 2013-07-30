@@ -333,10 +333,34 @@ function gutspot_github_repos_page_styles_scripts() {
 add_action('wp_enqueue_scripts', 'gutspot_github_repos_page_styles_scripts');
 
 
-// Remove Wordpress version number
-remove_action('wp_head', 'wp_generator');
-function gutspot_remove_version() {
-  return '';
+/**
+ * Remove WordPress generator version.
+ *
+ * @since Gutspot Theme 1.0
+ */
+function gutspot_remove_generator_version() {
+  if (get_option('gutspot_hide_wp_version')) {
+    remove_action('wp_head', 'wp_generator');
+    add_filter('the_generator', function() {
+      return '';
+    });    
+  }
 }
-add_filter('the_generator', 'gutspot_remove_version');
+add_action('init', 'gutspot_remove_generator_version');
+
+
+/**
+ * Remove X-Pingback in HTTP headers.
+ *
+ * @since Gutspot Theme 1.0
+ */
+function gutspot_remove_x_pingback() {
+  if (get_option('gutspot_hide_pingback')) {
+    add_filter('wp_headers', function($headers) {
+      unset($headers['X-Pingback']);
+      return $headers;
+    });
+  }
+}
+add_action('init', 'gutspot_remove_x_pingback');
 ?>

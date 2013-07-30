@@ -28,6 +28,8 @@ function gutspot_register_settings() {
   register_setting('gutspot-settings', 'gutspot_enable_prettify');
   register_setting('gutspot-settings', 'gutspot_github_type');
   register_setting('gutspot-settings', 'gutspot_github_login');
+  register_setting('gutspot-settings', 'gutspot_hide_wp_version');
+  register_setting('gutspot-settings', 'gutspot_hide_pingback');
 }
 
 
@@ -78,6 +80,22 @@ function gutspot_settings_page() {
         </th>
         <td>
           <input type="text" name="gutspot_github_login" class="regular-text" value="<?php print get_option('gutspot_github_login'); ?>" />
+        </td>
+      </tr>
+      <tr valign="top">
+        <th scope="row">隐藏 WordPress 版本</th>
+        <td>
+          <label for="gutspot_hide_wp_version">
+            <input type="checkbox" name="gutspot_hide_wp_version" id="gutspot_hide_wp_version" <?php if (get_option('gutspot_hide_wp_version') == true) {print "checked";} ?> /> 启用
+          </label>
+        </td>
+      </tr>
+      <tr valign="top">
+        <th scope="row">隐藏 Pingback 链接</th>
+        <td>
+          <label for="gutspot_hide_pingback">
+            <input type="checkbox" name="gutspot_hide_pingback" id="gutspot_hide_pingback" <?php if (get_option('gutspot_hide_pingback') == true) {print "checked";} ?> /> 启用
+          </label>
         </td>
       </tr>
     </tbody>
