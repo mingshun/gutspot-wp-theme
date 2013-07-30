@@ -60,7 +60,7 @@
         .css({
           'width': 'auto',
           'height': 'auto',
-          'background-color': '#3fb618'
+          'background-color': '#0072e6'
         })
         .append($('<div></div>')
           .addClass('modal-header')

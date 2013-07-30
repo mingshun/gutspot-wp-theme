@@ -6,6 +6,8 @@
                 <i title="发布时间" class="icon-calendar"></i><time ref="date"><?php the_time('Y-m-d H:i:s')?></time>
                 &nbsp;&nbsp;&nbsp;
                 <i title="作者" class="icon-user"></i><?php the_author_posts_link(); ?>
+                &nbsp;&nbsp;&nbsp;
+                <i title="评论" class="icon-comment"></i><?php comments_popup_link('没有评论', '1 条评论', '% 条评论'); ?>
                 <br />
                 <i title="分类" class="icon-bookmark"></i><?php the_category(' > '); ?>
                 <?php the_tags('<br /><i title="标签" class="icon-tag"></i>', ', ');?>
