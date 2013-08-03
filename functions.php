@@ -279,7 +279,7 @@ function gutspot_styles_scripts() {
     wp_enqueue_script('application', get_bloginfo('template_url') . '/javascripts/application.js', array('jquery-ui', 'jquery.smooth-scroll', 'bootstrap'), '1.0.0', true);
   }
 }
-add_action('init', 'gutspot_styles_scripts');
+add_action('wp_enqueue_scripts', 'gutspot_styles_scripts');
 
 
 /**
@@ -359,6 +359,11 @@ function gutspot_remove_x_pingback() {
     add_filter('wp_headers', function($headers) {
       unset($headers['X-Pingback']);
       return $headers;
+    });
+  } else {
+    add_action('wp_head', function() {?>
+<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+<?php
     });
   }
 }
