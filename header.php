@@ -32,7 +32,7 @@
   <header id="header">
     <hgroup class="row">
       <div class="span9">
-        <h1><a href="<?php bloginfo('siteurl'); ?>"><?php bloginfo('name'); ?></a></h1>
+        <h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
         <p class="lead"><?php bloginfo('description'); ?></p>
       </div>
       <div class="span3">
