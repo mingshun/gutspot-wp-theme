@@ -61,6 +61,18 @@ add_filter('excerpt_length', 'gutspot_excerpt_length');
 
 
 /**
+ * Set the X-UA-Compatible to HTTP header.
+ *
+ * @since Gutspot Theme 1.0
+ */
+function gutspot_set_x_ua_compable($headers) {
+  $headers['X-UA-Compatible'] = 'IE=edge,chrome=1';
+  return $headers;
+}
+add_filter('wp_headers', 'gutspot_set_x_ua_compable');
+
+
+/**
  * Custom get_comment_reply_link function.
  *
  * @since Gutspot Theme 1.0
