@@ -21,7 +21,7 @@ if (post_password_required()) {
   </h4>
 
   <ul class="comment-list">
-    <?php wp_list_comments(array('callback' => 'cutsom_comment')); ?>
+    <?php wp_list_comments(array('callback' => 'gutspot_comment')); ?>
   </ul>
   <!-- end of comment list -->
 
