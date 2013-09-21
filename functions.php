@@ -304,11 +304,7 @@ function gutspot_code_prettify_styles_scripts() {
     wp_enqueue_style('prettify', get_bloginfo('template_url') . '/stylesheets/prettify.css', array(), '1.0.0', 'all');
 
     wp_enqueue_script('prettify', get_bloginfo('template_url') . '/javascripts/prettify/prettify.js', array('jquery'), '4_mar_2013', true);
-    wp_deregister_script('swfobject');
-    wp_register_script('swfobject', get_bloginfo('template_url') . '/javascripts/swfobject/swfobject.js', array(), '2.2', true);
-    wp_enqueue_script('swfobject');
-    wp_enqueue_script('jquery.zclip', get_bloginfo('template_url') . '/javascripts/zclip/jquery.zclip.min.js', array('jquery'), '1.1.1', true);
-    wp_enqueue_script('enable-prettify', get_bloginfo('template_url') . '/javascripts/enable-prettify.js', array('prettify', 'swfobject', 'jquery.zclip'), '1.0.0', true);
+    wp_enqueue_script('enable-prettify', get_bloginfo('template_url') . '/javascripts/enable-prettify.js', array('prettify'), '1.0.0', true);
   }
 }
 add_action('wp_enqueue_scripts', 'gutspot_code_prettify_styles_scripts');

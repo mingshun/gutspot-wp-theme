@@ -301,28 +301,6 @@ div.subnav .nav > .active > a:hover,
 }
 
 
-/* copy code */
-
-pre.prettyprint {
-  position: relative;
-}
-
-pre.prettyprint > .copy-code {
-  position: absolute;
-  display: inline-block;
-  border: 1px solid #ececf0;
-  top: -1px;
-  right: -1px;
-  vertical-align: middle;
-  text-align: center;
-  color: #555;
-  font-size: 14px;
-  padding: 4px 10px;
-  background-color: #fbfbfc;
-  outline: none;
-}
-
-
 /* comment */
 
 #comments {
