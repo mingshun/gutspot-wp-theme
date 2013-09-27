@@ -12,7 +12,7 @@
  * @since Gutspot Theme 1.0
  */
 function gutspot_create_menu() {
-  add_submenu_page('themes.php', 'Gutspot 主题功能配置', '配置', 'administrator', 'theme_options.php', 'gutspot_settings_page');
+  add_submenu_page('themes.php', '主题选项', '主题选项', 'administrator', 'theme_options.php', 'gutspot_settings_page');
   add_action('admin_init', 'gutspot_register_settings');
 }
 add_action('admin_menu', 'gutspot_create_menu');
@@ -41,7 +41,9 @@ function gutspot_register_settings() {
 function gutspot_settings_page() {
 ?>
 <div class="wrap">
-<h2>Gutspot 主题功能配置</h2>
+<?php screen_icon(); ?>
+<h2>主题选项</h2>
+<?php settings_errors(); ?>
 <form method="post" action="options.php">
   <?php settings_fields('gutspot-settings'); ?>
   <table class="form-table">
