@@ -720,6 +720,12 @@ ul > .comment > article > .comment-body > .comment-content {
     -moz-border-radius: 0;
     border-radius: 0;
   }
+
+  .nav-collapse .nav > li > a,
+  .nav-collapse .dropdown-menu a {
+    color: #000;
+    font-weight: normal;
+  }
 }
  
 @media (min-width: 768px) {
