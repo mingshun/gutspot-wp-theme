@@ -282,6 +282,7 @@ function gutspot_styles_scripts() {
     wp_enqueue_style('font-awesome', get_bloginfo('template_url') . '/stylesheets/font-awesome.min.css', array('bootstrap'), '3.1.0', 'all');
     wp_enqueue_style('docs', get_bloginfo('template_url') . '/stylesheets/docs.css', array('bootstrap', 'font-awesome'), '1.0.0', 'all');
 
+    wp_enqueue_script('pace', get_bloginfo('template_url') . '/javascripts/pace.min.js', array(), '0.4.14', true);
     wp_deregister_script('jquery');
     wp_register_script('jquery', get_bloginfo('template_url') . '/javascripts/jquery.min.js', array(), '1.9.1', true);
     wp_enqueue_script('jquery');
