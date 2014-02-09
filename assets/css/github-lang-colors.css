@@ -1,0 +1,342 @@
+.repo[data-lang-color="ANTLR"]:after {
+    border-right-color: #9DC3FF;
+}
+.repo[data-lang-color="ASP"]:after {
+    border-right-color: #6a40fd;
+}
+.repo[data-lang-color="ActionScript"]:after {
+    border-right-color: #e3491a;
+}
+.repo[data-lang-color="Ada"]:after {
+    border-right-color: #02f88c;
+}
+.repo[data-lang-color="Agda"]:after {
+    border-right-color: #467C91;
+}
+.repo[data-lang-color="Arc"]:after {
+    border-right-color: #ca2afe;
+}
+.repo[data-lang-color="Arduino"]:after {
+    border-right-color: #bd79d1;
+}
+.repo[data-lang-color="Assembly"]:after {
+    border-right-color: #a67219;
+}
+.repo[data-lang-color="AutoHotkey"]:after {
+    border-right-color: #6594b9;
+}
+.repo[data-lang-color="AutoIt"]:after {
+    border-right-color: #36699B;
+}
+.repo[data-lang-color="Boo"]:after {
+    border-right-color: #d4bec1;
+}
+.repo[data-lang-color="C"]:after {
+    border-right-color: #555;
+}
+.repo[data-lang-color="C#"]:after {
+    border-right-color: #5a25a2;
+}
+.repo[data-lang-color="C++"]:after {
+    border-right-color: #f34b7d;
+}
+.repo[data-lang-color="CSS"]:after {
+    border-right-color: #1f085e;
+}
+.repo[data-lang-color="Cirru"]:after {
+    border-right-color: #aaaaff;
+}
+.repo[data-lang-color="Clean"]:after {
+    border-right-color: #3a81ad;
+}
+.repo[data-lang-color="Clojure"]:after {
+    border-right-color: #db5855;
+}
+.repo[data-lang-color="CoffeeScript"]:after {
+    border-right-color: #244776;
+}
+.repo[data-lang-color="ColdFusion"]:after {
+    border-right-color: #ed2cd6;
+}
+.repo[data-lang-color="Common Lisp"]:after {
+    border-right-color: #3fb68b;
+}
+.repo[data-lang-color="D"]:after {
+    border-right-color: #fcd46d;
+}
+.repo[data-lang-color="DM"]:after {
+    border-right-color: #075ff1;
+}
+.repo[data-lang-color="Dart"]:after {
+    border-right-color: #98BAD6;
+}
+.repo[data-lang-color="Dylan"]:after {
+    border-right-color: #3ebc27;
+}
+.repo[data-lang-color="ECL"]:after {
+    border-right-color: #8a1267;
+}
+.repo[data-lang-color="Eiffel"]:after {
+    border-right-color: #946d57;
+}
+.repo[data-lang-color="Elixir"]:after {
+    border-right-color: #6e4a7e;
+}
+.repo[data-lang-color="Emacs Lisp"]:after {
+    border-right-color: #c065db;
+}
+.repo[data-lang-color="Erlang"]:after {
+    border-right-color: #0faf8d;
+}
+.repo[data-lang-color="F#"]:after {
+    border-right-color: #b845fc;
+}
+.repo[data-lang-color="FORTRAN"]:after {
+    border-right-color: #4d41b1;
+}
+.repo[data-lang-color="Factor"]:after {
+    border-right-color: #636746;
+}
+.repo[data-lang-color="Fancy"]:after {
+    border-right-color: #7b9db4;
+}
+.repo[data-lang-color="Fantom"]:after {
+    border-right-color: #dbded5;
+}
+.repo[data-lang-color="Forth"]:after {
+    border-right-color: #341708;
+}
+.repo[data-lang-color="Glyph"]:after {
+    border-right-color: #e4cc98;
+}
+.repo[data-lang-color="Go"]:after {
+    border-right-color: #a89b4d;
+}
+.repo[data-lang-color="Gosu"]:after {
+    border-right-color: #82937f;
+}
+.repo[data-lang-color="Groovy"]:after {
+    border-right-color: #e69f56;
+}
+.repo[data-lang-color="Harbour"]:after {
+    border-right-color: #0e60e3;
+}
+.repo[data-lang-color="Haskell"]:after {
+    border-right-color: #29b544;
+}
+.repo[data-lang-color="Haxe"]:after {
+    border-right-color: #346d51;
+}
+.repo[data-lang-color="Hy"]:after {
+    border-right-color: #7891b1;
+}
+.repo[data-lang-color="IDL"]:after {
+    border-right-color: #e3592c;
+}
+.repo[data-lang-color="Io"]:after {
+    border-right-color: #a9188d;
+}
+.repo[data-lang-color="Ioke"]:after {
+    border-right-color: #078193;
+}
+.repo[data-lang-color="Java"]:after {
+    border-right-color: #b07219;
+}
+.repo[data-lang-color="JavaScript"]:after {
+    border-right-color: #f15501;
+}
+.repo[data-lang-color="Julia"]:after {
+    border-right-color: #a270ba;
+}
+.repo[data-lang-color="KRL"]:after {
+    border-right-color: #f5c800;
+}
+.repo[data-lang-color="LFE"]:after {
+    border-right-color: #004200;
+}
+.repo[data-lang-color="Lasso"]:after {
+    border-right-color: #2584c3;
+}
+.repo[data-lang-color="LiveScript"]:after {
+    border-right-color: #499886;
+}
+.repo[data-lang-color="Lua"]:after {
+    border-right-color: #fa1fa1;
+}
+.repo[data-lang-color="Matlab"]:after {
+    border-right-color: #bb92ac;
+}
+.repo[data-lang-color="Max"]:after {
+    border-right-color: #ce279c;
+}
+.repo[data-lang-color="Mirah"]:after {
+    border-right-color: #c7a938;
+}
+.repo[data-lang-color="Nemerle"]:after {
+    border-right-color: #0d3c6e;
+}
+.repo[data-lang-color="NetLogo"]:after {
+    border-right-color: #ff2b2b;
+}
+.repo[data-lang-color="Nimrod"]:after {
+    border-right-color: #37775b;
+}
+.repo[data-lang-color="Nu"]:after {
+    border-right-color: #c9df40;
+}
+.repo[data-lang-color="OCaml"]:after {
+    border-right-color: #3be133;
+}
+.repo[data-lang-color="Objective-C"]:after {
+    border-right-color: #438eff;
+}
+.repo[data-lang-color="Objective-J"]:after {
+    border-right-color: #ff0c5a;
+}
+.repo[data-lang-color="Omgrofl"]:after {
+    border-right-color: #cabbff;
+}
+.repo[data-lang-color="Oxygene"]:after {
+    border-right-color: #5a63a3;
+}
+.repo[data-lang-color="PAWN"]:after {
+    border-right-color: #dbb284;
+}
+.repo[data-lang-color="PHP"]:after {
+    border-right-color: #6e03c1;
+}
+.repo[data-lang-color="Parrot"]:after {
+    border-right-color: #f3ca0a;
+}
+.repo[data-lang-color="Pascal"]:after {
+    border-right-color: #b0ce4e;
+}
+.repo[data-lang-color="Perl"]:after {
+    border-right-color: #0298c3;
+}
+.repo[data-lang-color="Perl6"]:after {
+    border-right-color: #0298c3;
+}
+.repo[data-lang-color="Pike"]:after {
+    border-right-color: #066ab2;
+}
+.repo[data-lang-color="PogoScript"]:after {
+    border-right-color: #d80074;
+}
+.repo[data-lang-color="Processing"]:after {
+    border-right-color: #2779ab;
+}
+.repo[data-lang-color="Prolog"]:after {
+    border-right-color: #74283c;
+}
+.repo[data-lang-color="Puppet"]:after {
+    border-right-color: #cc5555;
+}
+.repo[data-lang-color="Pure Data"]:after {
+    border-right-color: #91de79;
+}
+.repo[data-lang-color="Python"]:after {
+    border-right-color: #3581ba;
+}
+.repo[data-lang-color="QML"]:after {
+    border-right-color: #44a51c;
+}
+.repo[data-lang-color="R"]:after {
+    border-right-color: #198ce7;
+}
+.repo[data-lang-color="Racket"]:after {
+    border-right-color: #ae17ff;
+}
+.repo[data-lang-color="Ragel in Ruby Host"]:after {
+    border-right-color: #ff9c2e;
+}
+.repo[data-lang-color="Rebol"]:after {
+    border-right-color: #358a5b;
+}
+.repo[data-lang-color="Rouge"]:after {
+    border-right-color: #cc0088;
+}
+.repo[data-lang-color="Ruby"]:after {
+    border-right-color: #701516;
+}
+.repo[data-lang-color="Rust"]:after {
+    border-right-color: #dea584;
+}
+.repo[data-lang-color="Scala"]:after {
+    border-right-color: #7dd3b0;
+}
+.repo[data-lang-color="Scheme"]:after {
+    border-right-color: #1e4aec;
+}
+.repo[data-lang-color="Self"]:after {
+    border-right-color: #0579aa;
+}
+.repo[data-lang-color="Shell"]:after {
+    border-right-color: #5861ce;
+}
+.repo[data-lang-color="Slash"]:after {
+    border-right-color: #007eff;
+}
+.repo[data-lang-color="Smalltalk"]:after {
+    border-right-color: #596706;
+}
+.repo[data-lang-color="Standard ML"]:after {
+    border-right-color: #dc566d;
+}
+.repo[data-lang-color="SuperCollider"]:after {
+    border-right-color: #46390b;
+}
+.repo[data-lang-color="Tcl"]:after {
+    border-right-color: #e4cc98;
+}
+.repo[data-lang-color="TeX"]:after {
+    border-right-color: #3D6117;
+}
+.repo[data-lang-color="Turing"]:after {
+    border-right-color: #45f715;
+}
+.repo[data-lang-color="TypeScript"]:after {
+    border-right-color: #31859c;
+}
+.repo[data-lang-color="Unified Parallel C"]:after {
+    border-right-color: #755223;
+}
+.repo[data-lang-color="UnrealScript"]:after {
+    border-right-color: #a54c4d;
+}
+.repo[data-lang-color="VHDL"]:after {
+    border-right-color: #543978;
+}
+.repo[data-lang-color="Vala"]:after {
+    border-right-color: #ee7d06;
+}
+.repo[data-lang-color="Verilog"]:after {
+    border-right-color: #848bf3;
+}
+.repo[data-lang-color="VimL"]:after {
+    border-right-color: #199c4b;
+}
+.repo[data-lang-color="Visual Basic"]:after {
+    border-right-color: #945db7;
+}
+.repo[data-lang-color="Volt"]:after {
+    border-right-color: #0098db;
+}
+.repo[data-lang-color="XQuery"]:after {
+    border-right-color: #2700e2;
+}
+.repo[data-lang-color="edn"]:after {
+    border-right-color: #db5855;
+}
+.repo[data-lang-color="nesC"]:after {
+    border-right-color: #ffce3b;
+}
+.repo[data-lang-color="ooc"]:after {
+    border-right-color: #b0b77e;
+}
+.repo[data-lang-color="wisp"]:after {
+    border-right-color: #7582D1;
+}
+.repo[data-lang-color="xBase"]:after {
+    border-right-color: #3a4040;
+}

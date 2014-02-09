@@ -1,6 +1,3 @@
-        <div class="span3 secondary-col">
-          <aside class="row-fuild">
-            <?php !function_exists('dynamic_sidebar') || dynamic_sidebar('Primary Sidebar'); ?>
-          </aside>
-        </div>
-        <!-- end of sidebar -->
+        <div class="col-md-3 secondary-col">
+          <?php !function_exists('dynamic_sidebar') || dynamic_sidebar('Primary Sidebar'); ?>
+        </div><!-- /.secondary-col -->

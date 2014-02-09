@@ -1,11 +1,11 @@
 <?php get_header(); ?>
-      <div class="main-content row-fluid">
+      <div class="page-main row">
 <?php if (have_posts()): ?>
-        <div class="span9 well primary-col">
+        <div class="col-md-9 primary-col">
 <?php while (have_posts()): the_post(); ?>
           <article <?php post_class('entry-post'); ?> id="post-<?php the_ID(); ?>">
             <header class="entry-header">
-              <h4 class="entry-title"><?php the_title(); ?></h4>
+              <h3 class="entry-title"><?php the_title(); ?></h3>
             </header>
             <div class="entry-content clearfix">
 <?php the_content(); ?>
@@ -16,9 +16,8 @@
 <?php comments_template(); ?>
           </div>
 <?php endwhile; ?>
-        </div>
+        </div><!-- /.primary-col -->
 <?php get_sidebar(); ?>
 <?php endif; ?>
-      </div>
-      <!-- end of main-content -->
+      </div><!-- /.page-main -->
 <?php get_footer(); ?>

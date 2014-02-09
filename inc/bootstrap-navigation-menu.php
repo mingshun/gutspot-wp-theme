@@ -35,10 +35,16 @@ class Bootstrap_Navigation_Menu extends Walker_Nav_Menu {
     $attributes .= ! empty($item->url)        ? ' href="'   . esc_attr($item->url       ) .'"'    : ' href="javascript: void(0);"';
     $attributes .= ($args->has_children)      ? ' class="dropdown-toggle" data-toggle="dropdown"' : '';
 
+    $icon_output = '';
+    if (!empty($item->font_awesome_icon)) {
+      $icon = esc_attr($item->font_awesome_icon);
+      $icon_output = '<i class="fa fa-lg fa-fw fa-' . $icon . '"></i>';
+    }
+
     $item_output  = $args->before;
     $item_output .= '<a'. $attributes .'>';
-    $item_output .= $args->link_before . apply_filters('the_title', $item->title, $item->ID) . $args->link_after;
-    $item_output .= ($args->has_children) ? '<i class="icon-caret-down"></i></a>' : '</a>';
+    $item_output .= $args->link_before . $icon_output . apply_filters('the_title', $item->title, $item->ID) . $args->link_after;
+    $item_output .= ($args->has_children) ? ' <b class="caret"></b></a>' : '</a>';
     $item_output .= $args->after;
 
     $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);

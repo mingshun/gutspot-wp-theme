@@ -1,11 +1,10 @@
 <?php get_header(); ?>
-      <div class="main-content row-fluid">
+      <div class="page-main row">
 <?php if (have_posts()): ?>
-        <div class="span9 well primary-col">
+        <div class="col-md-9 primary-col">
 <?php get_template_part('loop', 'single'); ?>
-        </div>
+        </div><!-- /.primary-col -->
 <?php get_sidebar(); ?>
 <?php endif; ?>
-      </div>
-      <!-- end of main-content -->
+      </div><!-- /.page-main -->
 <?php get_footer(); ?>

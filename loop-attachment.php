@@ -4,11 +4,19 @@
           <?php endif; ?>
           <article <?php post_class('entry-post'); ?> id="post-<?php the_ID(); ?>">
             <header class="entry-header">
-              <h4 class="entry-title">附件：<?php the_title(); ?><?php edit_post_link('&nbsp;&nbsp;&nbsp;<i class="icon-edit-sign"></i>'); ?></h4>
+              <h3 class="entry-title">
+                <?php edit_post_link('<i class="fa fa-lg fa-fw fa-edit"></i>'); ?>
+                附件：<?php the_title(); ?>
+              </h3>
               <h5 class="entry-details">
-                <i title="发布时间" class="icon-calendar"></i><time ref="date"><?php the_time('Y-m-d H:i:s')?></time>
-                &nbsp;&nbsp;&nbsp;
-                <i title="作者" class="icon-user"></i><?php the_author_posts_link(); ?>
+                <p>
+                  <span class="entry-details-item">
+                    <i title="发布时间" class="fa fa-calendar-o fa-fw"></i> <time ref="date"><?php the_time('Y-m-d H:i:s')?></time>
+                  </span>
+                  <span class="entry-details-item">
+                    <i title="作者" class="fa fa-user fa-fw"></i> <?php the_author_posts_link(); ?>
+                  </span>
+                </p>
               </h5>
             </header>
             <div class="entry-content clearfix">
@@ -41,8 +49,8 @@
                 </a>
               </p>
               <ul class="pager">
-                <li class="previous"><?php previous_image_link('<i class="icon-circle-arrow-left"></i>上一张'); ?></li>
-                <li class="next"><?php next_image_link('下一张<i class="icon-circle-arrow-right"></i>'); ?></li>
+                <li class="previous"><?php previous_image_link(0, '<i class="fa fa-arrow-left fa-fw"></i>上一张'); ?></li>
+                <li class="next"><?php next_image_link(0, '下一张<i class="fa fa-arrow-right fa-fw"></i>'); ?></li>
               </ul>
               <?php else: ?>
               <p>

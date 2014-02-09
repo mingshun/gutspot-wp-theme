@@ -25,7 +25,6 @@ add_action('admin_menu', 'gutspot_create_menu');
  */
 function gutspot_register_settings() {
   register_setting('gutspot-settings', 'gutspot_analytics');
-  register_setting('gutspot-settings', 'gutspot_enable_prettify');
   register_setting('gutspot-settings', 'gutspot_github_type');
   register_setting('gutspot-settings', 'gutspot_github_login');
   register_setting('gutspot-settings', 'gutspot_hide_wp_version');
@@ -54,14 +53,6 @@ function gutspot_settings_page() {
         </th>
         <td>
           <textarea name="gutspot_analytics" id="gutspot_analytics" rows="16" cols="120" class="large-text code"><?php print get_option('gutspot_analytics'); ?></textarea>
-        </td>
-      </tr>
-      <tr valign="top">
-        <th scope="row">Prettify 代码高亮显示</th>
-        <td>
-          <label for="gutspot_enable_prettify">
-            <input type="checkbox" name="gutspot_enable_prettify" id="gutspot_enable_prettify" <?php if (get_option('gutspot_enable_prettify') == true) {print "checked";} ?> /> 启用
-          </label>
         </td>
       </tr>
       <tr valign="top">
