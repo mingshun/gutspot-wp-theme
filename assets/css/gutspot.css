@@ -160,7 +160,14 @@ h4.entry-title {
   background: none;
 }
 
-.entry-content code:not(.hljs) {
+.entry-content pre > code {
+  overflow-x: auto;
+  word-wrap: normal;
+  white-space: pre;
+  width: auto;
+}
+
+.entry-content p > code {
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
   background: #008cba;
   color: white;
