@@ -167,7 +167,7 @@ h4.entry-title {
   width: auto;
 }
 
-.entry-content p > code {
+.entry-content :not(pre) > code {
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
   background: #008cba;
   color: white;
