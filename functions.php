@@ -136,7 +136,7 @@ function gutspot_styles_scripts() {
     wp_register_script('jquery', gutspot_js_url('jquery.js'), array(), '2.0.3', true);
     wp_enqueue_script('jquery');
     wp_enqueue_script('boostrap', gutspot_js_url('bootstrap.js'), array('jquery'), '3.1.0', true);
-    wp_enqueue_script('gutspot', gutspot_js_url('gutspot.js'), array('jquery'), '3.1.0', true);
+    wp_enqueue_script('gutspot', gutspot_js_url('gutspot.js'), array('jquery'), '1.0.0', true);
   }
 }
 add_action('wp_enqueue_scripts', 'gutspot_styles_scripts');
