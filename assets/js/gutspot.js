@@ -33,10 +33,6 @@
     $win.resize(fixNavTop);
 
     function processScroll() {
-      if ($body.width() < 750) {
-        return;
-      }
-
       var scrollTop = $win.scrollTop()
         , navTop = $('#banner').height() + $('#banner').offset().top
         , navHeight = $('#navbar').height();
@@ -54,10 +50,6 @@
     }
 
     function fixNavTop() {
-      if ($body.width() < 750) {
-        $navbar.removeClass('navbar-fixed-top');
-      }
-
       if ($body.width() < 768) {
         $navbarCollapse.removeClass('navbar-collapse-style');
       }
@@ -72,14 +64,12 @@
     var MIN_WIDTH = 768;
     $('.navbar-search-form input').click(function() {
       var width = $('body').width();
-      if (width >= MIN_WIDTH) {
         $(this).parent().parent().addClass('open');
-      }
     });
 
     $('.navbar-search-form input').blur(function() {
       var width = $('body').width();
-      if (width >= MIN_WIDTH && !trim($(this).val())) {
+      if (!trim($(this).val())) {
         $(this).val('');
         $(this).parent().parent().removeClass('open');
       }
