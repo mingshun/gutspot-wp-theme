@@ -153,6 +153,11 @@ h4.entry-title {
   margin-right: 0;
 }
 
+.entry-content blockquote {
+  font-size: 14px;
+  font-style: italic;
+}
+
 .entry-content pre {
   margin: 0 0 10.5 0;
   padding: 0;
