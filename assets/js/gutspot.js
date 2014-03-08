@@ -37,12 +37,17 @@
         , navTop = $('#banner').height() + $('#banner').offset().top
         , navHeight = $('#navbar').height();
 
+      if ($body.width() < 768) {
+        $navbar.removeClass('navbar-fixed-top');
+        return;
+      }
+
       if (scrollTop >= navTop) {
         $navbar.addClass('navbar-fixed-top');
         $navbarContainer.removeClass('navbar-container-style');
         $body.css('margin-top', marginTop + navHeight + 'px');
 
-      } else if (scrollTop <= navTop){
+      } else if (scrollTop <= navTop) {
         $navbar.removeClass('navbar-fixed-top');
         $navbarContainer.addClass('navbar-container-style');
         $body.css('margin-top', marginTop + 'px');
@@ -61,7 +66,6 @@
   });
 
   $(function() {
-    var MIN_WIDTH = 768;
     $('.navbar-search-form input').click(function() {
       var width = $('body').width();
         $(this).parent().parent().addClass('open');
