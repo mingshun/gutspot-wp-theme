@@ -44,11 +44,6 @@ input,
   font-size: 14px;
 }
 
-#navbar {
-  margin-left: -15px;
-  margin-right: -15px;
-}
-
 #navbar .navbar-container-style {
   padding-left: 15px;
 }
@@ -72,10 +67,6 @@ input,
 }
 
 @media (min-width: 768px) {
-  #navbar {
-    margin-left: auto;
-    margin-right: auto;
-  }
   #navbar .navbar-container-style {
     padding-left: 0;
   }

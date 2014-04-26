@@ -40,11 +40,7 @@
 
       if ($body.width() < 768) {
         $navbar.removeClass('navbar-fixed-top');
-        $body.css('margin-top', '0px');
-        $banner.before($navbar);
         return;
-      } else {
-        $banner.after($navbar);
       }
 
       if (scrollTop >= navTop) {
@@ -73,7 +69,7 @@
   $(function() {
     $('.navbar-search-form input').click(function() {
       var width = $('body').width();
-        $(this).parent().parent().addClass('open');
+      $(this).parent().parent().addClass('open');
     });
 
     $('.navbar-search-form input').blur(function() {
