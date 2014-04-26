@@ -143,7 +143,7 @@
     border-right-color: #b07219;
 }
 .repo[data-lang-color="JavaScript"]:after {
-    border-right-color: #f15501;
+    border-right-color: #f7df1e;
 }
 .repo[data-lang-color="Julia"]:after {
     border-right-color: #a270ba;
