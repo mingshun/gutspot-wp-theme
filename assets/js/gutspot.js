@@ -19,6 +19,7 @@
   $(function() {
     var $win = $(window)
       , $body = $('body')
+      , $banner = $('#banner')
       , $navbar = $('#navbar')
       , $navbarContainer = $('#navbar .container')
       , $navbarCollapse = $('#navbar .navbar-collapse')
@@ -34,12 +35,16 @@
 
     function processScroll() {
       var scrollTop = $win.scrollTop()
-        , navTop = $('#banner').height() + $('#banner').offset().top
-        , navHeight = $('#navbar').height();
+        , navTop = $banner.height() + $banner.offset().top
+        , navHeight = $navbar.height();
 
       if ($body.width() < 768) {
         $navbar.removeClass('navbar-fixed-top');
+        $body.css('margin-top', '0px');
+        $banner.before($navbar);
         return;
+      } else {
+        $banner.after($navbar);
       }
 
       if (scrollTop >= navTop) {
