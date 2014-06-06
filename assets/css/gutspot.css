@@ -20,38 +20,6 @@ a:hover {
   text-shadow: 0 0 3px #989898;
 }
 
-#banner {
-  border: none;
-}
-
-#title {
-  color: #00526e;
-}
-
-#title a,
-#title a:active,
-#title a:visited {
-  color: #008cba;
-}
-
-#title a:hover {
-  color: #00526e;
-}
-
-.navbar,
-input,
-.form-control {
-  font-size: 14px;
-}
-
-#navbar .navbar-container-style {
-  padding-left: 15px;
-}
-#navbar .navbar-collapse-style {
-  padding-left: 0;
-  margin-right: 15px;
-}
-
 .navbar-input-group {
   width: auto;
 }
@@ -67,14 +35,6 @@ input,
 }
 
 @media (min-width: 768px) {
-  #navbar .navbar-container-style {
-    padding-left: 0;
-  }
-  #navbar .navbar-collapse-style {
-    padding-left: 0;
-    margin-right: 15px;
-  }
-
   .navbar-input-group {
     width: 210px;
   }
@@ -85,10 +45,6 @@ input,
   }
   .navbar-search-form.open {
     width: 280px;
-  }
-
-  .navbar-form.navbar-right:last-child {
-    margin-right: -24px;
   }
 }
 

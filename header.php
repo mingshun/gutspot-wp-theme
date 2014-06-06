@@ -26,46 +26,37 @@
 <?php print get_option('gutspot_analytics'); ?>
 </head>
 <body <?php body_class(); ?>>
+<div class="navbar navbar-default navbar-inverse navbar-static-top" id="navbar">
+  <div class="container navbar-container-style">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
+    </div>
+    <div class="navbar-collapse navbar-inverse-collapse collapse">
+      <?php
+        wp_nav_menu(array(
+          'theme_location'  => 'primary',
+          'depth'           => 2,
+          'container'       => false,
+          'menu_class'      => 'nav navbar-nav',
+          'walker'          => new Bootstrap_Navigation_Menu()
+        ));
+      ?>
+      <form class="navbar-form navbar-right navbar-input-group navbar-search-form" role="search" method="GET" action="<?php bloginfo('url'); ?>">
+        <div class="input-group">
+          <input type="text" class="form-control" name="s" placeholder="站内搜索" speech x-webkit-speech>
+          <span class="input-group-btn">
+            <button class="btn btn-warning" type="submit">
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
+          </span>
+        </div>
+      </form>
+    </div><!-- /.nav-collapse -->
+  </div>
+</div><!-- /.navbar -->
 <div class="container">
-
-  <div class="page-header" id="banner">
-    <div class="row">
-      <div class="col-md-12">
-        <h1 id="title"><?php bloginfo('name'); ?></h1>
-        <p class="lead"><?php bloginfo('description'); ?></p>
-      </div>
-    </div>
-  </div><!-- /.page-header -->
-
-  <div class="navbar navbar-inverse" id="navbar">
-    <div class="container navbar-container-style">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>
-      <div class="navbar-collapse collapse navbar-inverse-collapse navbar-collapse-style">
-        <?php
-          wp_nav_menu(array(
-            'theme_location'  => 'primary',
-            'depth'           => 2,
-            'container'       => false,
-            'menu_class'      => 'nav navbar-nav',
-            'walker'          => new Bootstrap_Navigation_Menu()
-          ));
-        ?>
-        <form class="navbar-form navbar-right navbar-input-group navbar-search-form" role="search" method="GET" action="<?php bloginfo('url'); ?>">
-          <div class="input-group">
-            <input type="text" class="form-control" name="s" placeholder="站内搜索" speech x-webkit-speech>
-            <span class="input-group-btn">
-              <button class="btn btn-warning" type="submit">
-                <span class="glyphicon glyphicon-search"></span>
-              </button>
-            </span>
-          </div>
-        </form>
-      </div><!-- /.nav-collapse -->
-    </div>
-  </div><!-- /.navbar -->

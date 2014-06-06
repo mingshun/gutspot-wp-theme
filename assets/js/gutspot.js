@@ -17,56 +17,6 @@
   });
 
   $(function() {
-    var $win = $(window)
-      , $body = $('body')
-      , $banner = $('#banner')
-      , $navbar = $('#navbar')
-      , $navbarContainer = $('#navbar .container')
-      , $navbarCollapse = $('#navbar .navbar-collapse')
-      , navHeight = $('#navbar').height()
-      , navTop = $('#navbar').length && $('#navbar').offset().top
-      , marginTop = parseInt($body.css('margin-top'), 10);
-
-    $win.ready(processScroll);
-    $win.scroll(processScroll);
-    $win.resize(processScroll);
-    $win.ready(fixNavTop);
-    $win.resize(fixNavTop);
-
-    function processScroll() {
-      var scrollTop = $win.scrollTop()
-        , navTop = $banner.height() + $banner.offset().top
-        , navHeight = $navbar.height();
-
-      if ($body.width() < 768) {
-        $navbar.removeClass('navbar-fixed-top');
-        return;
-      }
-
-      if (scrollTop >= navTop) {
-        $navbar.addClass('navbar-fixed-top');
-        $navbarContainer.removeClass('navbar-container-style');
-        $body.css('margin-top', marginTop + navHeight + 'px');
-
-      } else if (scrollTop <= navTop) {
-        $navbar.removeClass('navbar-fixed-top');
-        $navbarContainer.addClass('navbar-container-style');
-        $body.css('margin-top', marginTop + 'px');
-      }
-    }
-
-    function fixNavTop() {
-      if ($body.width() < 768) {
-        $navbarCollapse.removeClass('navbar-collapse-style');
-      }
-
-      if ($body.width() > 750) {
-        $navbarCollapse.addClass('navbar-collapse-style');
-      }
-    }
-  });
-
-  $(function() {
     $('.navbar-search-form input').click(function() {
       var width = $('body').width();
       $(this).parent().parent().addClass('open');

@@ -127,15 +127,15 @@ function gutspot_img_url($url) {
  */
 function gutspot_styles_scripts() {
   if (!is_admin() && !gutspot_is_login_page()) {
-    wp_register_style('bootstrap', gutspot_css_url('bootstrap.css'), array(), '3.1.0', 'screen');
+    wp_register_style('bootstrap', gutspot_css_url('bootstrap.css'), array(), '3.1.1', 'screen');
     wp_enqueue_style('bootstrap');
     wp_enqueue_style('font-awesome', gutspot_css_url('font-awesome.css'), array('bootstrap'), '4.0.3', 'screen');
     wp_enqueue_style('gutspot', gutspot_css_url('gutspot.css'), array('bootstrap'), '1.0.0', 'screen');
 
     wp_deregister_script('jquery');
-    wp_register_script('jquery', gutspot_js_url('jquery.js'), array(), '2.0.3', true);
+    wp_register_script('jquery', gutspot_js_url('jquery.js'), array(), '1.10.2', true);
     wp_enqueue_script('jquery');
-    wp_enqueue_script('boostrap', gutspot_js_url('bootstrap.js'), array('jquery'), '3.1.0', true);
+    wp_enqueue_script('boostrap', gutspot_js_url('bootstrap.js'), array('jquery'), '3.1.1', true);
     wp_enqueue_script('gutspot', gutspot_js_url('gutspot.js'), array('jquery'), '1.0.0', true);
   }
 }

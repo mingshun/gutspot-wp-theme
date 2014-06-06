@@ -203,7 +203,7 @@
     border-right-color: #dbb284;
 }
 .repo[data-lang-color="PHP"]:after {
-    border-right-color: #6e03c1;
+    border-right-color: #4f5d95;
 }
 .repo[data-lang-color="Parrot"]:after {
     border-right-color: #f3ca0a;
