@@ -73,18 +73,6 @@ add_filter('excerpt_length', 'gutspot_excerpt_length');
 
 
 /**
- * Set the X-UA-Compatible to HTTP header.
- *
- * @since Gutspot Theme 1.0
- */
-function gutspot_set_x_ua_compable($headers) {
-  $headers['X-UA-Compatible'] = 'IE=edge,chrome=1';
-  return $headers;
-}
-add_filter('wp_headers', 'gutspot_set_x_ua_compable');
-
-
-/**
  * Detect if the current page is the login page.
  *
  * @since Gutspot Theme 1.0
