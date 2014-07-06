@@ -156,7 +156,7 @@ function gutspot_remove_generator_version() {
     remove_action('wp_head', 'wp_generator');
     add_filter('the_generator', function() {
       return '';
-    });    
+    });
   }
 }
 add_action('init', 'gutspot_remove_generator_version');
@@ -184,7 +184,7 @@ add_action('init', 'gutspot_remove_x_pingback');
 
 
 /**
- *  Add style class to posts link attributes.
+ * Add style class to posts link attributes.
  *
  * @since Gutspot Theme 2.0
  */
@@ -193,4 +193,35 @@ function gutspot_posts_link_attributes() {
 }
 add_filter('next_posts_link_attributes', 'gutspot_posts_link_attributes');
 add_filter('previous_posts_link_attributes', 'gutspot_posts_link_attributes');
+
+/**
+ * Custom login logo.
+ *
+ * @since Gutspot Theme 2.0
+ */
+function gutspot_custom_login_logo() {
+  $logo_url = gutspot_img_url('gutspot-favicon.png');
+  $logo_style = <<< END
+<style type="text/css">
+h1 a {
+  background-image: url({$logo_url}) !important;
+  background-size: 128px 128px !important;
+  width: 128px !important;
+  height: 128px !important;
+}
+</style>
+END;
+  echo $logo_style;
+}
+add_action('login_head', 'gutspot_custom_login_logo');
+
+/**
+ * Custom login logo url.
+ *
+ * @since Gutspot Theme 2.0
+ */
+function gutspot_custom_login_logo_url($url) {
+  return get_bloginfo('url');
+}
+add_filter('login_headerurl', 'gutspot_custom_login_logo_url');
 ?>
