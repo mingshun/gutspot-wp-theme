@@ -141,6 +141,11 @@ h4.entry-title {
   -webkit-border-radius: 3px;
 }
 
+.entry-content img {
+  max-width: 100%;
+  height: auto;
+}
+
 .read-more a {
   font-weight: bold;
   font-size: 14px;
